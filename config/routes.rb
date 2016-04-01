@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get "posts/:id", to: "posts#show", as:"posts"
 
   get "post/new", to: "posts#new", as: "posts_new"
-  post "posts", to: "posts#create"
+  
+  post "posts",  to: "posts#create"
+  post "post", to: "posts#create"
 
 
 
