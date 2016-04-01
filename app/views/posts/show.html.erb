@@ -1,0 +1,9 @@
+<h1> <%= link_to("#{@post.title}", "http://#{@post.url}", :target => "_blank") %></h1>
+<div class="post-content">
+<%= @post.content %>
+</div>
+
+<div class="link-options">
+<br />
+	<%= link_to "Home", root_path %>
+</div>

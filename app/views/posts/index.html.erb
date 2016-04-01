@@ -1,13 +1,15 @@
 <%= link_to("Add a New Post!", posts_new_path) %>
 
-<h1>ALL OF THE BLOG POSTINGS</h1>
+<h1>Forgeddit</h1>
+
 
 <ul class="posts">
   <% @posts.each do |post| %>
       <li class="post">
-        <%= render partial: "post", locals: { post: post } %>
-        <%= link_to("Edit Post", edit_post_path(post)) %>
-        <%= link_to("Delete Post", post_path(post), method: :delete) %>
+
+        <h3><%= link_to("#{post.title}", "http://#{post.url}", :target => "_blank") %></h3>
       </li>
+      <li>Submited: Hours ago by author</li>
+      <li>Comments</li>
   <% end %>
 </ul>
