@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get "posts/:id/edit", to: "posts#edit", as: "edit_post"
   put "posts/:id", to: "posts#update"
 
+  delete "posts/:id", to: "posts#destroy"
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
