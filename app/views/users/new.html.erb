@@ -1,1 +1,21 @@
-new.html.erb
+<h1>Create New User Account</h1>
+
+<%= form_tag(new_user_path) do %>
+    <div class="username">
+        <%= label_tag("Username: ") %> <br/>
+        <%= text_field_tag("username", @user.username) %>
+    </div>
+
+    <div class="user-email">
+        <%= label_tag("Email: ") %> <br/>
+        <%= text_field_tag("email", @user.email) %>
+    </div>
+
+    <div class="password">
+        <%= label_tag("Password: ") %> <br/>
+        <%= text_field_tag("password", @user.password) %>
+    </div>
+
+    <%= button_tag("Create Account") %>
+    <%= link_to("Home", root_path) %>
+<% end %>

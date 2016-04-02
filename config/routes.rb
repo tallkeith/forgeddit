@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  ########### POSTS ###########
   root to: "posts#index"
 
   get "posts/:id", to: "posts#show", as:"posts"
@@ -14,6 +15,12 @@ Rails.application.routes.draw do
 
   delete "posts/:id", to: "posts#destroy"
 
+  ########## USERS #############
+  get "users/new", to: "users#new", as: "new_user"
+  post "users/new", to: "users#create", as: "users"
+  get "users/:id", to: "users#show", as: "users_show"
+
+  get "users", to: "users#index"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
