@@ -25,6 +25,19 @@ Rails.application.routes.draw do
   get "users/:id/edit", to: "users#edit", as: "edit_user"
   put "users/:id", to: "users#update", as: "user"
 
+  ######### Login ###########
+  get "login", to: "logins#new", as: "login"
+  post "login", to: "logins#create"
+
+  delete "login", to: "logins#destroy"
+
+
+  ######### Comments ###########
+  post "posts/:id/comments", to: "comments#create", as: "post_comments"
+
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
