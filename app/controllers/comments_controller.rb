@@ -5,13 +5,10 @@ class CommentsController < ApplicationController
 	end
 
 	def create
-		@comment = Comment.new(user_id: params["user_id"], post_id: params["post_id"], content: params["content"])
-		 if @comment.save
-      redirect_to post_path(@post)
-    else
-      render :new
-    end
-	end
+    @post = Post.find(params["id"])
+    @post.comments.create(content: params["content"])
+    redirect_to posts_path(@post)
+  end
 
 	def edit
 	end

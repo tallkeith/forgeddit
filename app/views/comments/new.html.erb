@@ -1,1 +1,18 @@
-new.html.erb
+<%= form_tag(post_path) do %>
+    <div class="comment-content">
+        <%= label_tag("Comment: ") %> <br/>
+        <%= text_field_tag("content", @comment.content) %>
+    </div>
+
+    <div class="post-url">
+        <%= label_tag("URL: ") %> <br/>
+        <%= text_field_tag("url", @post.url) %>
+    </div>
+
+    <div class="post-content">
+        <%= label_tag("Content: ") %> <br/>
+        <%= text_area_tag("content", @post.content) %>
+    </div>
+
+    <%= button_tag("Create Post") %>
+<% end %>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
 
   get "posts/:id", to: "posts#show", as:"posts"
+  get "posts/:id", to: "posts#show"
 
   get "post/new", to: "posts#new", as: "posts_new"
 
@@ -34,7 +35,7 @@ Rails.application.routes.draw do
 
   ######### Comments ###########
   post "posts/:id/comments", to: "comments#create", as: "post_comments"
-
+  post "posts/:id", to: "comments#create"
 
 
 
