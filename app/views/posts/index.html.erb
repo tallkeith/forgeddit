@@ -1,5 +1,4 @@
-<%= link_to "Register", new_user_path %>
-
+<br />
 <%= link_to("New Post", posts_new_path) %>
 
 <h1>Forgeddit</h1>
@@ -10,6 +9,6 @@
         <h2><%= link_to("#{post.title}", "http://#{post.url}", :target => "_blank") %></h2>
       </li>
       <li>Submited <%= time_ago_in_words(post.created_at) %> by author</li>
-      <li><%= link_to "Comments go here", posts_path(@posts) %></li>
+      <li><%= link_to "Comments go here", posts_path(post) %></li>
   <% end %>
 </ul>
