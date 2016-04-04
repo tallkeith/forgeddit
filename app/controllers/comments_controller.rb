@@ -1,18 +1,18 @@
 class CommentsController < ApplicationController
 	def new
 		@comment = Comment.new
-		if current_user
+		
+	end
+
+	def create
+    @post = Post.find(params["id"])
+    if current_user
+    	@post.comments.create(content: params["content"])
 			render :new
 		else
 			flash[:notice] = "You have to login to do that."
 			redirect_to posts_path(@post)
 		end
-	end
-
-	def create
-    @post = Post.find(params["id"])
-    @post.comments.create(content: params["content"])
-    redirect_to posts_path(@post)
   end
 
 	def edit
