@@ -10,7 +10,7 @@
       <li class="post">
         <h2><%= link_to("#{post.title}", "http://#{post.url}", :target => "_blank") %></h2>
       </li>
-      <li>Submited <%= time_ago_in_words(post.created_at) %> by <%= post.user_id %>author</li>
+      <li>Submited <%= time_ago_in_words(post.created_at) %> by author</li>
       <li><%= link_to "Comments go here", posts_path(post) %></li>
   <% end %>
 </ul>
