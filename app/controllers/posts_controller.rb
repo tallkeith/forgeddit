@@ -7,7 +7,12 @@ class PostsController < ApplicationController
 	
 	def new
 		@post = Post.new
-		render :new
+		if current_user
+			render :new
+		else
+			flash[:notice] = "You have to login to do that."
+			redirect_to :root
+		end
 	end
 
 	def create

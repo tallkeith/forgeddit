@@ -1,7 +1,12 @@
 class CommentsController < ApplicationController
 	def new
 		@comment = Comment.new
-		render :new
+		if current_user
+			render :new
+		else
+			flash[:notice] = "You have to login to do that."
+			redirect_to posts_path(@post)
+		end
 	end
 
 	def create

@@ -1,5 +1,7 @@
 <br />
-<%= link_to("New Post", posts_new_path) %>
+<%if current_user%>
+	<%= link_to("New Post", posts_new_path) %>
+<%end%>
 
 <h1>Forgeddit</h1>
 
