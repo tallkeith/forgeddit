@@ -9,8 +9,8 @@ default: &default
   encoding: unicode
   pool: 5
   timeout: 5000
-  username: forgeddit
-  password: Tackle77
+
+  
 
 development:
   <<: *default

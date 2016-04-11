@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+    test "users with an invalid email are rejected" do
+    @user = User.new(email: "yourmom",
+                     password: "isreallyhot")
+    refute @user.valid?
+  
+  end
+
+
 end
