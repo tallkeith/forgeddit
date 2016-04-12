@@ -1,13 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 1
-  title: MyText
-  content: MyText
-  url: MyText
-
-two:
-  user_id: 1
-  title: MyText
-  content: MyText
-  url: MyText
+facebook:
+  title: Check this out!
+  content: It isa book of faces
+  url: facebook.com
+  user: tallkeith

@@ -16,8 +16,13 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.create(title: params["title"], content: params["content"], url: params["url"])
-		redirect_to posts_path(@post.id)
+		@post = Post.new(title: params["title"], content: params["content"], url: params["url"])
+		if @post.save
+			redirect_to posts_path(@post.id)
+		else
+			flash[:notice] = "Something went wrong"
+			render :new
+		end
 	end
 
 	def edit
